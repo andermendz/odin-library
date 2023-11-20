@@ -1,0 +1,85 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+ *{
+    font-family: 'inter', 'sans-serif';
+}
+body{
+    display: grid;
+    grid-template-columns: minmax(200px, 320px) 1fr;
+    height: 100vh;
+    margin: 0px;   
+}
+
+#sidebar{
+    background-color: #efefef;
+    display: grid;
+    grid-template-rows: 120px 60px 360px;
+}
+
+.logo{
+    display: grid;
+ 
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 30px;
+}
+#logo-svg{
+    font-size: 72px;
+}
+.logo>div{
+    font-size: 36px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    grid-area: 3/1;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 12px;
+   
+}
+.form-item{
+    display: grid;
+    gap: 6px;
+}
+
+.form-item>input{
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.form-item.status{
+    display: grid;
+}
+
+.form-item.status>div{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px;
+}
+.form-item.save{
+    margin-top:20px;
+}
+
+.form-item.save>input{
+    height: 40px;
+    font-weight: 500;
+
+}
