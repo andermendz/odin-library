@@ -25,7 +25,7 @@ body{
 #sidebar{
     background-color: #efefef;
     display: grid;
-    grid-template-rows: 150px 60px 360px;
+    grid-template-rows: 180px 40px 360px;
 }
 
 .logo{
