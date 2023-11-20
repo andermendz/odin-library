@@ -25,15 +25,15 @@ body{
 #sidebar{
     background-color: #efefef;
     display: grid;
-    grid-template-rows: 120px 60px 360px;
+    grid-template-rows: 150px 60px 360px;
 }
 
 .logo{
-    display: grid;
- 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
-    margin-bottom: 30px;
+   
 }
 #logo-svg{
     font-size: 72px;
