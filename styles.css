@@ -1,5 +1,5 @@
 
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 
@@ -40,6 +40,7 @@ body{
 }
 .logo>div{
     font-size: 36px;
+    font-weight: 600;
 }
 
 .form{
@@ -54,6 +55,7 @@ body{
 .form-item{
     display: grid;
     gap: 6px;
+    
 }
 
 .form-item>input{
@@ -81,5 +83,40 @@ body{
 .form-item.save>input{
     height: 40px;
     font-weight: 500;
+   
 
+}
+
+#content{
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    padding: 60px;
+    gap: 20px;
+    
+}
+
+.content-title{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.bookscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    height: 80%;  
+
+}
+
+.book{  
+    display: grid;
+    border-radius: 10px;
+    background-color: rgb(229, 229, 229);
+    height: 300px;
+    width: 200px;
+    transition: all 0.2s ease-in-out;
+}
+
+.book:hover {
+    transform: scale(1.06);
 }
