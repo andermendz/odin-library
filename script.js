@@ -9,3 +9,6 @@ Book = function (title, author, npages, status){
 book1 = new Book("test1", "test author 1", 344, "read");
 
 console.log(book1);
+}
+
+//test new PC
