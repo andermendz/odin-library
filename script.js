@@ -1,14 +1,36 @@
+Book = function (title, author, npages, status) {
+  this.title = title;
+  this.author = author;
+  this.npages = npages;
+  this.status = status;
+};
 
-Book = function (title, author, npages, status){
-    this.title = title;
-    this.author = author;
-    this.npages = npages;
-    this.status = status;
-}
+const formbutton = document.getElementById("form_button");
 
-book1 = new Book("test1", "test author 1", 344, "read");
+formbutton.onclick = function () {
+  const formTitle = document.getElementById("title");
+  const formAuthor = document.getElementById("author");
+  const formPages = document.getElementById("npages");
 
-console.log(book1);
+  let bookStatus = document.getElementsByName("status");
 
+  bookStatus.forEach((status) => {
+    {
+      if (status.checked && status.id == "read") {
+        bookStatus = "Read";
+      } else if (status.checked && status.id == "notread") {
+        bookStatus = "Not Read";
+      }
+    }
+  });
 
-//test new PC
+  book = new Book(
+    formTitle.value,
+    formAuthor.value,
+    formPages.value,
+    bookStatus
+  );
+
+  console.log(bookStatus);
+  console.log(book);
+};

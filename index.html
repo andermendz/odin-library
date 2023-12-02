@@ -6,63 +6,51 @@
     <title>Library</title>
     <link rel="stylesheet" href="./styles.css" />
 
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </head>
+
   <body>
     <div id="sidebar">
       <div class="logo">
         <span id="logo-svg" class="material-symbols-outlined"> menu_book </span>
         <div>Open Library</div>
       </div>
-      <div class="form">
+
+      <div class="form" id="booksform">
         <div class="form-item">
           <label for="title"> Title </label>
-          <input type="text" name="title" />
+          <input type="text" id="title" />
         </div>
 
         <div class="form-item">
           <label for="author"> Author </label>
-          <input type="text" name="author" />
+          <input type="text" id="author" />
         </div>
-
+      
         <div class="form-item">
           <label for="npages"> Number of pages </label>
-          <input type="text" name="npages" />
+          <input type="number" id="npages" />
         </div>
 
         <div class="form-item status">
           <label for="status"> Status </label>
           <div>
-            <div>Read <input type="radio" name="statusread" id="read" /></div>
+            <div>Read <input type="radio" name="status" id="read" /></div>
 
             <div>
-              Not read <input type="radio" name="statusread" id="read" />
+              Not read <input type="radio" name="status" id="notread" />
             </div>
           </div>
         </div>
 
         <div class="form-item save">
-          <input type="button" value="Save" />
+          <button id="form_button">Save</button>
         </div>
       </div>
     </div>
     <div id="content">
       <div class="content-title">Books</div>
       <div class="bookscontainer">
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
-        <div class="book"></div>
         <div class="book"></div>
       </div>
     </div>

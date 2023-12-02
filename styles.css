@@ -76,17 +76,27 @@ body{
     border-radius: 12px;
     padding: 10px;
 }
+
+
 .form-item.save{
     margin-top:20px;
 }
 
-.form-item.save>input{
+.form-item.save>button{
+
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
     height: 40px;
     font-weight: 500;
-   
+    transition: all 0.4s;
 
 }
 
+.form-item.save>button:hover{
+background-color: #f5f5f5;
+transform: scale(1.06);
+
+}
 #content{
     display: grid;
     grid-template-rows: 40px 1fr;
