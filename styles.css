@@ -103,6 +103,7 @@ body {
 }
 
 .book {
+ position: static;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -110,8 +111,7 @@ body {
   background-color: #eeeeee;
   height: 300px;
   width: 200px;
-  transition: all 0.4s ease-in-out;
-
+  transition: all 0.2s ease-in-out;
 
 }
 
@@ -126,8 +126,9 @@ body {
 }
 
 .book-details {
-  width: 160px;
-  padding: 20px;
+  position: relative;
+  width: 0px;
+  padding: 0px;
 
   grid-column: 2;
   grid-row: 1;
@@ -138,6 +139,8 @@ body {
   gap: 5px;
   opacity: 0;
   transition: all 0.4s;
+
+  
 }
 
 .book-title {
@@ -163,7 +166,9 @@ body {
 .book-npages {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 24px;
   grid-column: 1/4;
   grid-row: 4;
   font-size: 16px;
@@ -173,7 +178,9 @@ body {
 .book-status {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
   grid-column: 1/4;
   grid-row: 5;
   font-size: 16px;
@@ -194,11 +201,14 @@ body {
 
 .book:hover {
   transform: scale(1.06);
-  grid-template-columns: 1fr 2fr;
-  width: 400px;
+  grid-template-columns: 1fr 1fr;
+
   grid-template-rows: 1fr;
 }
 
 .book:hover > .book-details {
+  background-color: #d3d3d3;
   opacity: 1;
+  width: 160px;
+  padding: 20px;
 }
