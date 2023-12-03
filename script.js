@@ -7,12 +7,16 @@ Book = function (title, author, npages, status) {
 
 const formbutton = document.getElementById("form_button");
 
-formbutton.onclick = function () {
+
+
+formbutton.onclick = function (e) {
+    e.preventDefault();
   const formTitle = document.getElementById("title");
   const formAuthor = document.getElementById("author");
   const formPages = document.getElementById("npages");
-
   let bookStatus = document.getElementsByName("status");
+
+  const bookscontainer = document.querySelector(".bookscontainer");
 
   bookStatus.forEach((status) => {
     {
@@ -24,13 +28,22 @@ formbutton.onclick = function () {
     }
   });
 
-  book = new Book(
+   bookObject = new Book(
     formTitle.value,
     formAuthor.value,
     formPages.value,
     bookStatus
   );
 
+  const book = document.createElement("div");
+  book.className = "book";
+
+  bookscontainer.appendChild(book)
+
+  console.log(bookscontainer)
+
+  
+  
   console.log(bookStatus);
   console.log(book);
 };
