@@ -112,32 +112,21 @@ body {
   height: 300px;
   width: 200px;
   transition: all 0.2s ease-in-out;
-
 }
 
-.book-image {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.book-image > img {
-  height: 300px;
-  border-radius: 10px;
-}
 
 .book-details {
-  position: relative;
-  width: 0px;
-  padding: 0px;
 
-  grid-column: 2;
+  padding: 20px;
+
+  grid-column: 1;
   grid-row: 1;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 40px 20px 1fr 40px 50px;
   gap: 5px;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.4s;
 
   
@@ -188,27 +177,26 @@ body {
 }
 
 .status-indicator{
+  font-size: 12px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #c5ffa3;
 }
 
-/* .book-details > div {
-    background-color: #ffffff;
-    border-radius: 4px;
-    width: 100%;
-} */
+.read{
+  background-color: #c5ffa3;
+}
 
+.not-read{
+  background-color: #ffa3a3;
+}
 .book:hover {
   transform: scale(1.06);
-  grid-template-columns: 1fr 1fr;
 
-  grid-template-rows: 1fr;
 }
 
 .book:hover > .book-details {
-  background-color: #d3d3d3;
+
   opacity: 1;
-  width: 160px;
-  padding: 20px;
+ 
+  padding: 18px;
 }
