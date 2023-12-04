@@ -67,11 +67,18 @@ formbutton.onclick = function (e) {
 
   const booktitle = document.createElement("div");
   booktitle.className = "book-title";
+
+  if(bookObject.title.length > 34){
+    bookObject.title = bookObject.title.slice(0, 34) + "...";
+  }
   booktitle.textContent = bookObject.title;
   bookdetails.appendChild(booktitle);
 
   const bookauthor = document.createElement("div");
   bookauthor.className = "book-author";
+  if(bookObject.author.length > 28){
+    bookObject.author = bookObject.author.slice(0, 28) + "...";
+  }
   bookauthor.textContent = "By " + bookObject.author;
   bookdetails.appendChild(bookauthor);
 
