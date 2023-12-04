@@ -20,23 +20,23 @@
         <div class="form" id="booksform">
           <div class="form-item">
             <label for="title"> Title </label>
-            <input type="text" id="title" />
+            <input type="text" id="title" maxlength="50" required/>
           </div>
 
           <div class="form-item">
             <label for="author"> Author </label>
-            <input type="text" id="author" />
+            <input type="text" id="author" maxlength="50" />
           </div>
 
           <div class="form-item">
             <label for="npages"> Number of pages </label>
-            <input type="number" id="npages" />
+            <input type="number" id="npages" maxlength="10"/>
           </div>
 
           <div class="form-item status">
             <label for="status"> Status </label>
             <div>
-              <div>Read <input type="radio" name="status" id="read" /></div>
+              <div>Read <input type="radio" name="status" id="read"/></div>
 
               <div>
                 Not read <input type="radio" name="status" id="notread" />
@@ -47,8 +47,16 @@
           <div class="form-item save">
             <button id="form_button">Save</button>
           </div>
-        </div>
+
+          
+        <div class="error-container ">
+          dad
+                </div>
       </form>
+        </div>
+
+
+    
     </div>
     <div id="content">
       <div class="content-title">Books</div>

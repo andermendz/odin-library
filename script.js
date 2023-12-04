@@ -10,12 +10,17 @@ const formbutton = document.getElementById("form_button");
 
 formbutton.onclick = function (e) {
   e.preventDefault();
+
+ 
   const formTitle = document.getElementById("title");
   const formAuthor = document.getElementById("author");
   const formPages = document.getElementById("npages");
   let bookStatus = document.getElementsByName("status");
+  
 
+  let errorContainer = document.querySelector(".error-container");
   const bookscontainer = document.querySelector(".bookscontainer");
+  
 
   bookStatus.forEach((status) => {
     {
@@ -26,6 +31,26 @@ formbutton.onclick = function (e) {
       }
     }
   });
+
+  console.log(formTitle.value + " " + formAuthor.value + " " + formPages.value + " " + bookStatus )
+  
+  if (formTitle.value == "" || formAuthor.value == "" || formPages.value == "") {
+    errorContainer.textContent = "Please fill in all the fields";
+    errorContainer.setAttribute("style", "opacity: 1");
+    console.log("error en el formulario");
+    return;
+
+
+  } else if ( formTitle.value  && formAuthor.value && formPages.value && bookStatus !== "Read" && bookStatus != "Not Read" ){
+    errorContainer.textContent = "Choose a status";
+    errorContainer.setAttribute("style", "opacity: 1");
+    console.log("no status");
+    return;
+  } else {
+    errorContainer.setAttribute("style", "opacity: 0");
+  }
+
+
 
   bookObject = new Book(
     formTitle.value,
