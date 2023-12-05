@@ -214,13 +214,13 @@ body {
   background-color: #a3edff;
 }
 
-.book-remove{
+.book-delete{
   padding: 10px;
   border-radius: 10px;
   background-color: #ffa3a3;
 }
 
-.book-remove:hover, .book-edit:hover{
+.book-delete:hover, .book-edit:hover{
   cursor: pointer;
 }
 
