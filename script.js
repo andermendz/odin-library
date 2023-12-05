@@ -118,3 +118,9 @@ formbutton.onclick = function (e) {
   booksform.reset();
   bookscontainer.appendChild(book);
 };
+
+
+let user = [{name: "pedro", age: 212}, {name: "dave", age: 21}, {name:"last person"}]
+
+
+console.log(user[0].name);
