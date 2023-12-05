@@ -59,6 +59,12 @@ formbutton.onclick = function (e) {
     bookStatus
   );
 
+  
+let users = [{name: "pedro", age: 212}, {name: "dave", age: 21}, {name:"last person"}]
+users.push(bookObject);
+console.log(users[3].title);
+
+// modifica para que por cada elemento del array debe haber un  book en la vista
   const book = document.createElement("div");
   book.className = "book";
 
@@ -119,8 +125,3 @@ formbutton.onclick = function (e) {
   bookscontainer.appendChild(book);
 };
 
-
-let user = [{name: "pedro", age: 212}, {name: "dave", age: 21}, {name:"last person"}]
-
-
-console.log(user[0].name);
