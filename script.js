@@ -8,7 +8,7 @@ Book = function (title, author, npages, status) {
 const booksform = document.getElementById('booksform');
 const formbutton = document.getElementById("form_button");
 
-book.prototype.changeStatus = function () {
+Book.prototype.changeStatus = function () {
     if(this.status == "Read"){
       this.status = "Not Read";
     } else if (this.status == "Not Read"){
