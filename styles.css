@@ -242,3 +242,27 @@ body {
  
   padding: 18px;
 }
+
+@media (max-width: 768px) {
+  body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 550px 1fr;
+    height: 100vh;
+    margin: 0px;
+  }
+
+  #sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
