@@ -72,7 +72,7 @@ body {
   margin-top: 20px;
 }
 
-.form-item.save > button {
+ button {
   border: 1px solid #d3d3d3;
   border-radius: 10px;
   height: 40px;
@@ -87,9 +87,10 @@ body {
 
 .error-container{
   transition: all 0.4s;
-  opacity: 0;
+
   margin-top: 2em;
-  padding: 20px;
+  margin: 20px;
+  padding: 10px;
   padding-bottom: 50px;
 
   background-color: #fcc5c5;
@@ -262,7 +263,51 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: c10enter;
 
+  }
+}
+
+
+dialog{
+  width: 360px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  animation: fade-in
+  
+}
+
+#dialog-content {
+  display: flex;
+  flex-direction: column;
+
+
+
+}
+
+dialog::backdrop {
+  
+  backdrop-filter: blur(1.2px);
+ 
+  animation: fade-in-backdrop 1s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-backdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

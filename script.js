@@ -8,6 +8,8 @@ Book = function (title, author, npages, status) {
 const booksform = document.getElementById("booksform");
 const formbutton = document.getElementById("form_button");
 
+let errorContainer = document.createElement("div");
+
 Book.prototype.changeStatus = function () {
   if (this.status == "Read") {
     this.status = "Not Read";
@@ -26,7 +28,6 @@ formbutton.onclick = function (e) {
   const formPages = document.getElementById("npages");
   let bookStatus = document.getElementsByName("status");
 
-  let errorContainer = document.querySelector(".error-container");
   const bookscontainer = document.querySelector(".bookscontainer");
 
   bookStatus.forEach((status) => {
@@ -54,8 +55,11 @@ formbutton.onclick = function (e) {
     formAuthor.value == "" ||
     formPages.value == ""
   ) {
+    
+    errorContainer.setAttribute("class", "error-container");
+    booksform.appendChild(errorContainer);
     errorContainer.textContent = "Please fill in all the fields";
-    errorContainer.setAttribute("style", "opacity: 1");
+   
     console.log("error en el formulario");
     return;
   } else if (
@@ -65,8 +69,11 @@ formbutton.onclick = function (e) {
     bookStatus !== "Read" &&
     bookStatus != "Not Read"
   ) {
+    errorContainer.setAttribute("class", "error-container");
+    booksform.appendChild(errorContainer);
+
     errorContainer.textContent = "Choose a status";
-    errorContainer.setAttribute("style", "opacity: 1");
+   
     console.log("no status");
     return;
   } else {
@@ -188,3 +195,14 @@ formbutton.onclick = function (e) {
   booksform.reset();
 };
 
+let dialog = document.querySelector("dialog");
+let dialogb = document.querySelector("#dialogbutton");
+let dialogclose = document.querySelector("#dialogclose");
+
+dialogb.onclick = function () {
+  dialog.showModal();
+};
+
+dialogclose.onclick = function () {
+  dialog.close();
+};

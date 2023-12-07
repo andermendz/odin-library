@@ -48,17 +48,21 @@
             <button id="form_button">Save</button>
           </div>
 
-          
-        <div class="error-container ">
-          dad
-                </div>
+       
       </form>
+
         </div>
     
     </div>
+
     <div id="content">
+      
       <div class="content-title">Books</div>
+      
+      <button id="dialogbutton">dialog</button>
+      
       <div class="bookscontainer">
+
 
         <!-- <div class="book">
           
@@ -88,9 +92,52 @@
             </div>
           </div>
         </div> -->
+        <dialog> 
+          <div id="dialog-content">
+            <form action=""  id="booksform-dialog">
+              <div class="form" id="booksform">
+                <div class="form-item">
+                  <label for="title-dialog"> Title </label>
+                  <input type="text" id="title-dialog" maxlength="50" required/>
+                </div>
+      
+                <div class="form-item">
+                  <label for="author-dialog"> Author </label>
+                  <input type="text" id="author-dialog" maxlength="50" />
+                </div>
+      
+                <div class="form-item">
+                  <label for="npages-dialog"> Number of pages </label>
+                  <input type="number" id="npages-dialog" maxlength="10"/>
+                </div>
+      
+                <div class="form-item status">
+                  <label for="status-dialog"> Status </label>
+                  <div>
+                    <div>Read <input type="radio" name="status-dialog" id="read"/></div>
+      
+                    <div>
+                      Not read <input type="radio" name="status-dialog" id="notread" />
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="form-item save">
+                  <button id="form_button">Save</button>
+                </div>
+      
+                
+              <!-- <div class="error-container ">
+               
+                      </div> -->
+            </form>
+            <button id="dialogclose">close</button>
+          </div>
+        
+        </dialog>
+     
 
-       
-
+        
       </div>
     </div>
   </body>
