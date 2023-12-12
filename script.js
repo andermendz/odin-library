@@ -90,6 +90,8 @@ formbutton.onclick = function (e) {
   books.push(bookObject);
   console.log(books);
 
+  // TO-DO: find a way to optimize the books adittion to the container
+  
   function renderBook(book) {
     const bookdiv = document.createElement("div");
     bookdiv.className = "book";
