@@ -128,13 +128,15 @@ formbutton.onclick = function (e) {
     };
     bookscontainer.appendChild(bookdiv);
   }
-  
   bookscontainer.innerHTML = "";
+
   books.forEach((book) => {
     renderBook(book);
   });
+
   booksform.reset();
-}  
+};
+
 let dialog = document.querySelector("dialog");
 let dialogb = document.querySelector("#dialogbutton");
 let dialogclose = document.querySelector("#dialogclose");
