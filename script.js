@@ -94,109 +94,47 @@ formbutton.onclick = function (e) {
   
   function renderBook(book) {
     const bookdiv = document.createElement("div");
-    bookdiv.className = "book";
-
-    const bookdetails = document.createElement("div");
-    bookdetails.className = "book-details";
-
-    const booktitle = document.createElement("div");
-    booktitle.className = "book-title";
-
-    if (book.title.length > 34) {
-      book.title = book.title.slice(0, 34) + "...";
-    }
-    booktitle.textContent = book.title;
-    bookdetails.appendChild(booktitle);
-
-    const bookauthor = document.createElement("div");
-    bookauthor.className = "book-author";
-    if (book.author.length > 28) {
-      book.author = book.author.slice(0, 28) + "...";
-    }
-    bookauthor.textContent = "By " + book.author;
-    bookdetails.appendChild(bookauthor);
-
-    const booknpages = document.createElement("div");
-    booknpages.className = "book-npages";
-
-    const pagesindicator = document.createElement("div");
-    pagesindicator.textContent = "Pages:";
-    booknpages.appendChild(pagesindicator);
-
-    const pagesnumber = document.createElement("div");
-    pagesnumber.textContent = book.npages;
-    booknpages.appendChild(pagesnumber);
-    bookdetails.appendChild(booknpages);
-    bookdiv.appendChild(bookdetails);
-
-    const bookstatus = document.createElement("div");
-    bookstatus.className = "book-status";
-
-    const statusTitle = document.createElement("div");
-    statusTitle.textContent = "Status:";
-    bookstatus.appendChild(statusTitle);
-
-    const statusIndicator = document.createElement("div");
-    statusIndicator.className = "status-indicator";
-    statusIndicator.textContent = book.status;
-    if (book.status === "Read") {
-      statusIndicator.classList.add("read");
-    } else if (book.status === "Not Read") {
-      statusIndicator.classList.add("not-read");
-    }
-
+    bookdiv.innerHTML = `
+      <div class="book">
+        <div class="book-details">
+          <div class="book-title">${book.title.length > 34 ? book.title.slice(0, 34) + "..." : book.title}</div>
+          <div class="book-author">By ${book.author.length > 28 ? book.author.slice(0, 28) + "..." : book.author}</div>
+          <div class="book-npages">
+            <div>Pages:</div>
+            <div>${book.npages}</div>
+          </div>
+          <div class="book-status">
+            <div>Status:</div>
+            <div class="status-indicator ${book.status === "Read" ? "read" : "not-read"}">${book.status}</div>
+          </div>
+          <div class="book-actions">
+            <div class="book-edit">
+              <span class="material-symbols-outlined">edit</span>
+            </div>
+            <div class="book-delete">
+              <span class="material-symbols-outlined">delete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const statusIndicator = bookdiv.querySelector(".status-indicator");
     statusIndicator.onclick = function () {
       book.changeStatus();
-
-      console.log(books);
-
       bookscontainer.innerHTML = "";
-
       books.forEach((book) => {
         renderBook(book);
       });
     };
-
-    bookstatus.appendChild(statusIndicator);
-    bookdetails.appendChild(bookstatus);
-
-    const bookActions = document.createElement("div");
-    bookActions.className = "book-actions";
-
-    const bookEdit = document.createElement("div");
-    bookEdit.className = "book-edit";
-
-    const editIcon = document.createElement("span");
-    editIcon.className = "material-symbols-outlined";
-    editIcon.textContent = "edit";
-    bookEdit.appendChild(editIcon);
-
-    const bookDelete = document.createElement("div");
-    bookDelete.className = "book-delete";
-
-    const deleteIcon = document.createElement("span");
-    deleteIcon.className = "material-symbols-outlined";
-    deleteIcon.textContent = "delete";
-    bookDelete.appendChild(deleteIcon);
-
-    bookActions.appendChild(bookEdit);
-    bookActions.appendChild(bookDelete);
-
-    bookdetails.appendChild(bookActions);
-
-    bookdiv.appendChild(bookdetails);
-
     bookscontainer.appendChild(bookdiv);
   }
+  
   bookscontainer.innerHTML = "";
-
   books.forEach((book) => {
     renderBook(book);
   });
-
   booksform.reset();
-};
-
+}  
 let dialog = document.querySelector("dialog");
 let dialogb = document.querySelector("#dialogbutton");
 let dialogclose = document.querySelector("#dialogclose");
