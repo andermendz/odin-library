@@ -119,9 +119,13 @@ body {
 }
 
 .search>input{
+
+  border: 2px solid #e5e7eb;
   border-radius: 8px;
   height: 32px;
-  width: 240px;
+  width: 360px;
+  padding-left: 40px;
+
 }
 #content {
   display: grid;
