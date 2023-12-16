@@ -11,27 +11,38 @@
 body {
   display: grid;
   grid-template-columns: minmax(200px, 320px) 1fr;
+  grid-template-rows: 100px 1fr;
   height: 100vh;
   margin: 0px;
 }
 
 #sidebar {
-  background-color: #efefef;
+  
+  border: 1px solid #e5e7eb;
+  background-color: #fafbfb;
   display: grid;
   grid-template-rows: 180px 40px 360px;
+
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
 
 .logo {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-left: 30px;
+  gap: 20px;
+  justify-content: start;
   align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+  border: 1px solid #e5e7eb;
 }
 #logo-svg {
-  font-size: 72px;
+  font-size: 36px;
 }
 .logo > div {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 600;
 }
 
@@ -39,8 +50,8 @@ body {
   display: flex;
   flex-direction: column;
   grid-area: 3/1;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 30px;
+ 
   gap: 12px;
 }
 .form-item {
@@ -97,11 +108,30 @@ body {
   border-radius: 12px;
 }
 
+.search{
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  background-color: #fafbfb;
+  border: 1px solid #e5e7eb;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.search>input{
+  border-radius: 8px;
+  height: 32px;
+  width: 240px;
+}
 #content {
   display: grid;
-  grid-template-rows: 40px 1fr;
-  padding: 60px;
+  grid-template-rows: 40px 40px 1fr;
+  padding: 40px;
   gap: 20px;
+  
+  border: 1px solid #e5e7eb;  border: 1px solid #e5e7eb;
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .content-title {
