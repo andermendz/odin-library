@@ -16,7 +16,33 @@ Book.prototype.changeStatus = function () {
   } else if (this.status == "Not Read") {
     this.status = "Read";
   }
+
+  console.log(this.length)
 };
+
+Book.prototype.bookRemoval = function () {
+
+  let index = 0;
+
+  books.forEach((book) => {
+    if ( (book.title == this.title) && 
+    (book.author == this.author) &&
+     (book.npages == this.npages) && 
+     (book.status == this.status)) {
+      console.log(index + " match found")
+      books.splice(index, 1);
+      console.log('match removed at '+ index)
+
+     }
+     else {
+      console.log(index++);
+  } 
+
+  }
+  ) 
+
+}
+
 
 let books = [];
 
@@ -90,7 +116,6 @@ formbutton.onclick = function (e) {
   books.push(bookObject);
   console.log(books);
 
-  // TO-DO: find a way to optimize the books adittion to the container
   
   function renderBook(book) {
     const bookdiv = document.createElement("div");
@@ -118,7 +143,10 @@ formbutton.onclick = function (e) {
         </div>
       </div>
     `;
+
     const statusIndicator = bookdiv.querySelector(".status-indicator");
+    const bookDelete = bookdiv.querySelector(".book-delete");
+
     statusIndicator.onclick = function () {
       book.changeStatus();
       bookscontainer.innerHTML = "";
@@ -126,9 +154,24 @@ formbutton.onclick = function (e) {
         renderBook(book);
       });
     };
+
+
+
+    bookDelete.onclick = function () {
+      book.bookRemoval()
+      bookscontainer.innerHTML = "";
+      books.forEach((book) => {
+        renderBook(book);
+      });
+    }
+
     bookscontainer.appendChild(bookdiv);
   }
   bookscontainer.innerHTML = "";
+
+
+
+
 
   books.forEach((book) => {
     renderBook(book);
