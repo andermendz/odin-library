@@ -1,4 +1,5 @@
-Book = function (title, author, npages, status) {
+Book = function (id,title, author, npages, status) {
+  this.id = id;
   this.title = title;
   this.author = author;
   this.npages = npages;
@@ -7,10 +8,7 @@ Book = function (title, author, npages, status) {
 
 const booksform = document.getElementById("booksform");
 const formbutton = document.getElementById("form_button");
-
 let errorContainer = document.createElement("div");
-
-
 let dialog = document.querySelector("dialog");
 
 
@@ -26,29 +24,15 @@ Book.prototype.changeStatus = function () {
 
 Book.prototype.bookRemoval = function () {
 
-  let index = 0;
+ 
+      books.splice(this.id, 1);
 
-  books.forEach((book) => {
-    if ( (book.title == this.title) && 
-    (book.author == this.author) &&
-     (book.npages == this.npages) && 
-     (book.status == this.status)) {
-      console.log(index + " match found")
-      books.splice(index, 1);
-      console.log('match removed at '+ index)
-
-     }
-     else {
-      console.log(index++);
-  } 
-
-  }
-  ) 
+   
 
 }
 
-Book.prototype.edit = function () {
-
+Book.prototype.Edit = function () {
+  console.log("The book to edit is the one with ID : " + this.id)
 }
 
 
@@ -56,6 +40,14 @@ let books = [];
 
 formbutton.onclick = function (e) {
   e.preventDefault();
+
+
+  const bookId = document.getElementById('book-id');
+
+  // declare bookid by the length of the array
+  bookId.value = books.length;
+
+  
 
   const formTitle = document.getElementById("title");
   const formAuthor = document.getElementById("author");
@@ -115,6 +107,7 @@ formbutton.onclick = function (e) {
   }
 
   bookObject = new Book(
+    bookId.value,
     formTitle.value,
     formAuthor.value,
     formPages.value,
@@ -172,14 +165,22 @@ formbutton.onclick = function (e) {
       });
     }
 
-
-
     bookEdit.onclick = function () {
-      dialog.showModal();
+
+   book.Edit();
+
+  
+dialog.showModal();
+
+      
+ 
+
+
+
+
     };
 
     bookscontainer.appendChild(bookdiv);
-
 
   }
   bookscontainer.innerHTML = "";
