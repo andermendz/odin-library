@@ -10,6 +10,10 @@ const formbutton = document.getElementById("form_button");
 
 let errorContainer = document.createElement("div");
 
+
+let dialog = document.querySelector("dialog");
+
+
 Book.prototype.changeStatus = function () {
   if (this.status == "Read") {
     this.status = "Not Read";
@@ -40,6 +44,10 @@ Book.prototype.bookRemoval = function () {
 
   }
   ) 
+
+}
+
+Book.prototype.edit = function () {
 
 }
 
@@ -146,6 +154,7 @@ formbutton.onclick = function (e) {
 
     const statusIndicator = bookdiv.querySelector(".status-indicator");
     const bookDelete = bookdiv.querySelector(".book-delete");
+    const bookEdit = bookdiv.querySelector(".book-edit");
 
     statusIndicator.onclick = function () {
       book.changeStatus();
@@ -155,8 +164,6 @@ formbutton.onclick = function (e) {
       });
     };
 
-
-
     bookDelete.onclick = function () {
       book.bookRemoval()
       bookscontainer.innerHTML = "";
@@ -165,7 +172,15 @@ formbutton.onclick = function (e) {
       });
     }
 
+
+
+    bookEdit.onclick = function () {
+      dialog.showModal();
+    };
+
     bookscontainer.appendChild(bookdiv);
+
+
   }
   bookscontainer.innerHTML = "";
 
@@ -175,12 +190,12 @@ formbutton.onclick = function (e) {
 
   books.forEach((book) => {
     renderBook(book);
+    
   });
 
   booksform.reset();
 };
 
-let dialog = document.querySelector("dialog");
 let dialogb = document.querySelector("#dialogbutton");
 let dialogclose = document.querySelector("#dialogclose");
 
