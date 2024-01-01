@@ -263,16 +263,3 @@ formbutton.onclick = function (e) {
 
   booksform.reset();
 };
-
-let dialogb = document.querySelector("#dialogbutton");
-let dialogclose = document.querySelector("#dialogclose");
-
-dialogb.onclick = function () {
-  dialog.showModal();
-};
-
-dialogclose.onclick = function () {
-  dialog.close();
-};
-
-
