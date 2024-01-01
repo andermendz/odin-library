@@ -36,26 +36,77 @@ Book.prototype.Edit = function () {
   let statusReadDialog = document.getElementById("dialog-read");
   let statusNotReadDialog = document.getElementById("dialog-notread");
 
+  let dialogErrorContainer = document.getElementById("dialog-error");
+
+
+      
+  titleDialog.value = this.title;
+  authorDialog.value = this.author;
+  npagesDialog.value = this.npages;
+  
   this.status == "Read"
     ? (statusReadDialog.checked = true)
     : (statusNotReadDialog.checked = true);
 
+
   let dialogFormButton = document.getElementById("dialog-form_button");
+
 
   dialogFormButton.onclick = (e) => {
     e.preventDefault();
 
-    this.title = titleDialog.value;
-    dialog.close();
+  let dialogBookStatus = document.getElementsByName("status-dialog");
+
+  
+
+    dialogBookStatus.forEach((status) => {
+      {
+        if (status.checked && status.id == "dialog-read") {
+          dialogBookStatus = "Read";
+        } else if (status.checked && status.id == "dialog-notread") {
+          dialogBookStatus = "Not Read";
+        }
+      }
+    });
+
+    if (
+      titleDialog.value == "" ||
+      authorDialog.value == "" ||
+      npagesDialog.value == ""
+    ) {
+      dialogErrorContainer.setAttribute("style", "display: block;");
+
+      dialogErrorContainer.textContent = "Please fill in all the fields";
+  
+      console.log("error en el formulario");
+      return;
+    } else if (
+      titleDialog.value &&
+      authorDialog.value &&
+      npagesDialog.value &&
+      dialogBookStatus !== "Read" &&
+      dialogBookStatus != "Not Read"
+    ) {
+      dialogErrorContainer.setAttribute("style", "display: block;");
     
+      dialogErrorContainer.textContent = "Choose a status";
+      console.log(dialogBookStatus)
+  
+      console.log("no status");
+      return;
+    } else {
+      errorContainer.setAttribute("style", "opacity: 0");
+    }
+
+
+    this.title = titleDialog.value;
+    this.author = authorDialog.value;
+    this.npages = npagesDialog.value;
+    this.status = dialogBookStatus;
+    dialog.close();
+
     renderBooks()
   };
-
-  titleDialog.value = this.title;
-  authorDialog.value = this.author;
-  npagesDialog.value = this.npages;
-
-
  
 };
 
