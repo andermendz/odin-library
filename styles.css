@@ -72,7 +72,7 @@ body {
 
 .form-item.status > div {
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: #f0f0f0;
   justify-content: space-around;
   align-items: center;
   border-radius: 12px;
