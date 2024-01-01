@@ -29,6 +29,13 @@ Book.prototype.Remove = function () {
 Book.prototype.Edit = function () {
   console.log("The book to edit is the one with ID : " + this.id);
 
+  let dialogCloseButton = document.getElementById("dialogclose");
+
+  dialogCloseButton.onclick = function (e) {
+    e.preventDefault();
+    dialog.close();
+  };
+
   let titleDialog = document.getElementById("title-dialog");
   let authorDialog = document.getElementById("author-dialog");
   let npagesDialog = document.getElementById("npages-dialog");
