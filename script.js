@@ -160,7 +160,7 @@ function renderBook(book) {
 
   bookDelete.onclick = function () {
     book.Remove();
-   
+    renderBooks()
   };
 
   bookEdit.onclick = function () {
