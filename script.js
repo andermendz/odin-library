@@ -22,17 +22,27 @@ Book.prototype.changeStatus = function () {
   console.log(this.length)
 };
 
-Book.prototype.bookRemoval = function () {
-
- 
+Book.prototype.Remove = function () {
       books.splice(this.id, 1);
-
-   
 
 }
 
 Book.prototype.Edit = function () {
   console.log("The book to edit is the one with ID : " + this.id)
+
+  let titleDialog = document.getElementById('title-dialog');
+  let authorDialog = document.getElementById('author-dialog');
+  let npagesDialog = document.getElementById('npages-dialog');
+
+  let statusReadDialog = document.getElementById('dialog-read');
+  let statusNotReadDialog = document.getElementById('dialog-notread');
+
+  this.status == 'Read' ? statusReadDialog.checked = true : statusNotReadDialog.checked = true;
+  
+
+  titleDialog.value = this.title;
+  authorDialog.value = this.author;
+  npagesDialog.value = this.npages;
 }
 
 
@@ -158,7 +168,7 @@ formbutton.onclick = function (e) {
     };
 
     bookDelete.onclick = function () {
-      book.bookRemoval()
+      book.Remove()
       bookscontainer.innerHTML = "";
       books.forEach((book) => {
         renderBook(book);
