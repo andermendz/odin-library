@@ -12,6 +12,21 @@ const formbutton = document.getElementById("form_button");
 let errorContainer = document.createElement("div");
 let dialog = document.querySelector("dialog");
 
+let books = [];
+
+for (let i = 0; i < 6; i++) {
+  let status = ["Read", "Not Read"];
+  bookObject = new Book(
+    i,
+    "Title " + i,
+    "Author " + i,
+    Math.floor(Math.random() * 600),
+    status[Math.floor(Math.random() * status.length)]
+  );
+  books.push(bookObject);
+  console.log(books);
+}
+
 Book.prototype.changeStatus = function () {
   if (this.status == "Read") {
     this.status = "Not Read";
@@ -23,7 +38,16 @@ Book.prototype.changeStatus = function () {
 };
 
 Book.prototype.Remove = function () {
-  books.splice(this.id, 1);
+  books.forEach(() => {
+    let i = 0;
+    books.forEach((book) => {
+      if (this.id == book.id) {
+        books.splice(i, 1);
+      } else {
+        i++;
+      }
+    });
+  });
 };
 
 Book.prototype.Edit = function () {
@@ -47,26 +71,20 @@ Book.prototype.Edit = function () {
 
   let dialogErrorContainer = document.getElementById("dialog-error");
 
-
-      
   titleDialog.value = this.title;
   authorDialog.value = this.author;
   npagesDialog.value = this.npages;
-  
+
   this.status == "Read"
     ? (statusReadDialog.checked = true)
     : (statusNotReadDialog.checked = true);
 
-
   let dialogFormButton = document.getElementById("dialog-form_button");
-
 
   dialogFormButton.onclick = (e) => {
     e.preventDefault();
 
-  let dialogBookStatus = document.getElementsByName("status-dialog");
-
-  
+    let dialogBookStatus = document.getElementsByName("status-dialog");
 
     dialogBookStatus.forEach((status) => {
       {
@@ -86,7 +104,7 @@ Book.prototype.Edit = function () {
       dialogErrorContainer.setAttribute("style", "display: block;");
 
       dialogErrorContainer.textContent = "Please fill in all the fields";
-  
+
       console.log("error en el formulario");
       return;
     } else if (
@@ -97,16 +115,15 @@ Book.prototype.Edit = function () {
       dialogBookStatus != "Not Read"
     ) {
       dialogErrorContainer.setAttribute("style", "display: block;");
-    
+
       dialogErrorContainer.textContent = "Choose a status";
-      console.log(dialogBookStatus)
-  
+      console.log(dialogBookStatus);
+
       console.log("no status");
       return;
     } else {
       errorContainer.setAttribute("style", "opacity: 0");
     }
-
 
     this.title = titleDialog.value;
     this.author = authorDialog.value;
@@ -115,20 +132,24 @@ Book.prototype.Edit = function () {
     dialog.close();
 
     dialogForm.reset();
-    renderBooks()
+    renderBooks();
   };
- 
 };
 
+let searchBar = document.getElementById("searchbar");
 
-let searchBar = document.getElementById('searchbar');
-
-
-
-searchBar.oninput = function (){
-  console.log('Searching for ' + searchBar.value);
-}
-
+searchBar.oninput = function () {
+  if (searchBar.value.length > 0) {
+    console.log("Searching for " + searchBar.value);
+    bookscontainer.innerHTML = "";
+    books.forEach((book) => {
+      if (book.title.includes(searchBar.value)) renderBook(book);
+    });
+  } else {
+    console.log("Not searching ");
+    renderBooks();
+  }
+};
 
 function renderBook(book) {
   const bookdiv = document.createElement("div");
@@ -136,9 +157,7 @@ function renderBook(book) {
     <div class="book">
       <div class="book-details">
         <div class="book-title">${
-          book.title.length > 34
-            ? book.title.slice(0, 34) + "..."
-            : book.title
+          book.title.length > 34 ? book.title.slice(0, 34) + "..." : book.title
         }</div>
         <div class="book-author">By ${
           book.author.length > 28
@@ -173,12 +192,12 @@ function renderBook(book) {
 
   statusIndicator.onclick = function () {
     book.changeStatus();
-    renderBooks()
+    renderBooks();
   };
 
   bookDelete.onclick = function () {
     book.Remove();
-    renderBooks()
+    renderBooks();
   };
 
   bookEdit.onclick = function () {
@@ -196,8 +215,6 @@ function renderBooks() {
   });
 }
 
-let books = [];
-
 formbutton.onclick = function (e) {
   e.preventDefault();
 
@@ -210,8 +227,6 @@ formbutton.onclick = function (e) {
   const formAuthor = document.getElementById("author");
   const formPages = document.getElementById("npages");
   let bookStatus = document.getElementsByName("status");
-
-  
 
   bookStatus.forEach((status) => {
     {
@@ -273,11 +288,9 @@ formbutton.onclick = function (e) {
   books.push(bookObject);
   console.log(books);
 
- 
-
-
-
-  renderBooks()
+  renderBooks();
 
   booksform.reset();
 };
+
+renderBooks();
