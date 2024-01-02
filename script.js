@@ -36,6 +36,8 @@ Book.prototype.Edit = function () {
     dialog.close();
   };
 
+  let dialogForm = document.getElementById("booksform-dialog");
+
   let titleDialog = document.getElementById("title-dialog");
   let authorDialog = document.getElementById("author-dialog");
   let npagesDialog = document.getElementById("npages-dialog");
@@ -112,11 +114,20 @@ Book.prototype.Edit = function () {
     this.status = dialogBookStatus;
     dialog.close();
 
+    dialogForm.reset();
     renderBooks()
   };
  
 };
 
+
+let searchBar = document.getElementById('searchbar');
+
+
+
+searchBar.oninput = function (){
+  console.log('Searching for ' + searchBar.value);
+}
 
 
 function renderBook(book) {

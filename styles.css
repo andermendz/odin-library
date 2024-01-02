@@ -17,7 +17,6 @@ body {
 }
 
 #sidebar {
-  
   border: 1px solid #e5e7eb;
   background-color: #fafbfb;
   display: grid;
@@ -51,11 +50,10 @@ body {
   flex-direction: column;
   grid-area: 3/1;
   padding: 30px;
- 
+
   gap: 12px;
 }
 .form-item {
-  
   display: grid;
   gap: 6px;
 }
@@ -83,7 +81,7 @@ body {
   margin-top: 20px;
 }
 
- button {
+button {
   border: 1px solid #d3d3d3;
   border-radius: 10px;
   height: 40px;
@@ -96,7 +94,7 @@ body {
   transform: scale(1.06);
 }
 
-.error-container{
+.error-container {
   transition: all 0.4s;
 
   margin-top: 2em;
@@ -108,7 +106,7 @@ body {
   border-radius: 12px;
 }
 
-.search{
+.search {
   display: flex;
   align-items: center;
   padding-left: 40px;
@@ -118,22 +116,21 @@ body {
   grid-row: 1/2;
 }
 
-.search>input{
-
+.search > input {
   border: 2px solid #e5e7eb;
   border-radius: 8px;
   height: 32px;
   width: 360px;
   padding-left: 40px;
-
 }
 #content {
   display: grid;
   grid-template-rows: 40px 40px 1fr;
   padding: 40px;
   gap: 20px;
-  
-  border: 1px solid #e5e7eb;  border: 1px solid #e5e7eb;
+
+  border: 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
   grid-column: 2/3;
   grid-row: 2/3;
 }
@@ -151,7 +148,7 @@ body {
 }
 
 .book {
- position: static;
+  position: static;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -162,9 +159,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-
 .book-details {
-
   padding: 20px;
 
   grid-column: 1;
@@ -172,12 +167,10 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 40px 30px 30px 1fr 40px 50px 40PX;
+  grid-template-rows: 40px 30px 30px 1fr 40px 50px 40px;
   gap: 5px;
   opacity: 1;
   transition: all 0.4s;
-
-  
 }
 
 .book-title {
@@ -190,12 +183,11 @@ body {
   grid-row: 1/3;
   font-size: 16px;
   font-weight: 600;
-
 }
 
 .book-author {
   display: flex;
- 
+
   align-items: center;
   justify-content: end;
   grid-column: 1/3;
@@ -228,13 +220,13 @@ body {
   font-weight: 800;
 }
 
-.status-indicator{
+.status-indicator {
   font-size: 12px;
-    padding: 10px;
-    border-radius: 10px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.book-actions{
+.book-actions {
   display: flex;
   padding-left: 20px;
   padding-right: 20px;
@@ -243,43 +235,42 @@ body {
   grid-row: 7;
 }
 
-.book-edit{
+.book-edit {
   padding: 10px;
   border-radius: 10px;
   background-color: #a3edff;
 }
 
-.book-delete{
+.book-delete {
   padding: 10px;
   border-radius: 10px;
   background-color: #ffa3a3;
 }
 
-.book-delete:hover, .book-edit:hover{
+.book-delete:hover,
+.book-edit:hover {
   cursor: pointer;
 }
 
-.read{
+.read {
   background-color: #c5ffa3;
 }
 
-.not-read{
+.not-read {
   background-color: #ffa3a3;
 }
 .book:hover {
   transform: scale(1.06);
-
 }
 
 .book:hover > .book-details {
-
   opacity: 1;
- 
+
   padding: 18px;
 }
 
 @media (max-width: 768px) {
-  body{
+  body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 550px 1fr;
@@ -290,39 +281,31 @@ body {
   #sidebar {
     display: flex;
     flex-direction: column;
-    
   }
 
-  .logo{
+  .logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: c10enter;
-
   }
 }
 
-
-dialog{
+dialog {
   width: 360px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  animation: fade-in
-  
+  animation: fade-in;
 }
 
 #dialog-content {
   display: flex;
   flex-direction: column;
-
-
-
 }
 
 dialog::backdrop {
-  
   backdrop-filter: blur(1.2px);
- 
+
   animation: fade-in-backdrop 1s ease-in;
 }
 
