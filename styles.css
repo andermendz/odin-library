@@ -312,6 +312,7 @@ button {
   #content{
     grid-column: 1/2;
     grid-row: 4/5;
+    border: 0px;
   }
 }
 
