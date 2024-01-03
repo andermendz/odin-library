@@ -1,3 +1,5 @@
+// by @andermendz
+
 Book = function (id, title, author, npages, status) {
   this.id = id;
   this.title = title;
