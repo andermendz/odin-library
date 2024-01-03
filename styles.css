@@ -109,14 +109,20 @@ button {
 .search {
   display: flex;
   align-items: center;
-  padding-left: 40px;
+  
   background-color: #fafbfb;
   border: 1px solid #e5e7eb;
   grid-column: 2/3;
   grid-row: 1/2;
 }
 
-.search > input {
+.search > div{
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.search > div > input {
   border: 2px solid #e5e7eb;
   border-radius: 8px;
   height: 32px;
@@ -301,9 +307,15 @@ button {
 
   }
   .search{
+    padding: 0px;
+   
     width: 100%;
     grid-column: 1/2;
     grid-row: 3/4;
+  }
+
+  .search > div{
+    width: 80%;
   }
 
   .search > input{
