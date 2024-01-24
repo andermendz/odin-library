@@ -1,12 +1,123 @@
 // by @andermendz
 
-Book = function (id, title, author, npages, status) {
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.npages = npages;
-  this.status = status;
-};
+class Book {
+  constructor(id, title, author, npages, status) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.npages = npages;
+    this.status = status;
+  }
+
+  changeStatus() {
+    if (this.status == "Read") {
+      this.status = "Not Read";
+    } else if (this.status == "Not Read") {
+      this.status = "Read";
+    }
+
+    console.log(this.length);
+  }
+
+  Remove() {
+    books.forEach(() => {
+      let i = 0;
+      books.forEach((book) => {
+        if (this.id == book.id) {
+          books.splice(i, 1);
+        } else {
+          i++;
+        }
+      });
+    });
+  }
+
+  Edit() {
+    console.log("The book to edit is the one with ID : " + this.id);
+
+    let dialogCloseButton = document.getElementById("dialogclose");
+
+    dialogCloseButton.onclick = function (e) {
+      e.preventDefault();
+      dialog.close();
+    };
+
+    let dialogForm = document.getElementById("booksform-dialog");
+
+    let titleDialog = document.getElementById("title-dialog");
+    let authorDialog = document.getElementById("author-dialog");
+    let npagesDialog = document.getElementById("npages-dialog");
+
+    let statusReadDialog = document.getElementById("dialog-read");
+    let statusNotReadDialog = document.getElementById("dialog-notread");
+
+    let dialogErrorContainer = document.getElementById("dialog-error");
+
+    titleDialog.value = this.title;
+    authorDialog.value = this.author;
+    npagesDialog.value = this.npages;
+
+    this.status == "Read"
+      ? (statusReadDialog.checked = true)
+      : (statusNotReadDialog.checked = true);
+
+    let dialogFormButton = document.getElementById("dialog-form_button");
+
+    dialogFormButton.onclick = (e) => {
+      e.preventDefault();
+
+      let dialogBookStatus = document.getElementsByName("status-dialog");
+
+      dialogBookStatus.forEach((status) => {
+        {
+          if (status.checked && status.id == "dialog-read") {
+            dialogBookStatus = "Read";
+          } else if (status.checked && status.id == "dialog-notread") {
+            dialogBookStatus = "Not Read";
+          }
+        }
+      });
+
+      if (
+        titleDialog.value == "" ||
+        authorDialog.value == "" ||
+        npagesDialog.value == ""
+      ) {
+        dialogErrorContainer.setAttribute("style", "display: block;");
+
+        dialogErrorContainer.textContent = "Please fill in all the fields";
+
+        console.log("error en el formulario");
+        return;
+      } else if (
+        titleDialog.value &&
+        authorDialog.value &&
+        npagesDialog.value &&
+        dialogBookStatus !== "Read" &&
+        dialogBookStatus != "Not Read"
+      ) {
+        dialogErrorContainer.setAttribute("style", "display: block;");
+
+        dialogErrorContainer.textContent = "Choose a status";
+        console.log(dialogBookStatus);
+
+        console.log("no status");
+        return;
+      } else {
+        errorContainer.setAttribute("style", "opacity: 0");
+      }
+
+      this.title = titleDialog.value;
+      this.author = authorDialog.value;
+      this.npages = npagesDialog.value;
+      this.status = dialogBookStatus;
+      dialog.close();
+
+      dialogForm.reset();
+      renderBooks();
+    };
+  }
+}
 
 const booksform = document.getElementById("booksform");
 const bookscontainer = document.querySelector(".bookscontainer");
@@ -28,115 +139,6 @@ for (let i = 0; i < 6; i++) {
   books.push(bookObject);
   console.log(books);
 }
-
-Book.prototype.changeStatus = function () {
-  if (this.status == "Read") {
-    this.status = "Not Read";
-  } else if (this.status == "Not Read") {
-    this.status = "Read";
-  }
-
-  console.log(this.length);
-};
-
-Book.prototype.Remove = function () {
-  books.forEach(() => {
-    let i = 0;
-    books.forEach((book) => {
-      if (this.id == book.id) {
-        books.splice(i, 1);
-      } else {
-        i++;
-      }
-    });
-  });
-};
-
-Book.prototype.Edit = function () {
-  console.log("The book to edit is the one with ID : " + this.id);
-
-  let dialogCloseButton = document.getElementById("dialogclose");
-
-  dialogCloseButton.onclick = function (e) {
-    e.preventDefault();
-    dialog.close();
-  };
-
-  let dialogForm = document.getElementById("booksform-dialog");
-
-  let titleDialog = document.getElementById("title-dialog");
-  let authorDialog = document.getElementById("author-dialog");
-  let npagesDialog = document.getElementById("npages-dialog");
-
-  let statusReadDialog = document.getElementById("dialog-read");
-  let statusNotReadDialog = document.getElementById("dialog-notread");
-
-  let dialogErrorContainer = document.getElementById("dialog-error");
-
-  titleDialog.value = this.title;
-  authorDialog.value = this.author;
-  npagesDialog.value = this.npages;
-
-  this.status == "Read"
-    ? (statusReadDialog.checked = true)
-    : (statusNotReadDialog.checked = true);
-
-  let dialogFormButton = document.getElementById("dialog-form_button");
-
-  dialogFormButton.onclick = (e) => {
-    e.preventDefault();
-
-    let dialogBookStatus = document.getElementsByName("status-dialog");
-
-    dialogBookStatus.forEach((status) => {
-      {
-        if (status.checked && status.id == "dialog-read") {
-          dialogBookStatus = "Read";
-        } else if (status.checked && status.id == "dialog-notread") {
-          dialogBookStatus = "Not Read";
-        }
-      }
-    });
-
-    if (
-      titleDialog.value == "" ||
-      authorDialog.value == "" ||
-      npagesDialog.value == ""
-    ) {
-      dialogErrorContainer.setAttribute("style", "display: block;");
-
-      dialogErrorContainer.textContent = "Please fill in all the fields";
-
-      console.log("error en el formulario");
-      return;
-    } else if (
-      titleDialog.value &&
-      authorDialog.value &&
-      npagesDialog.value &&
-      dialogBookStatus !== "Read" &&
-      dialogBookStatus != "Not Read"
-    ) {
-      dialogErrorContainer.setAttribute("style", "display: block;");
-
-      dialogErrorContainer.textContent = "Choose a status";
-      console.log(dialogBookStatus);
-
-      console.log("no status");
-      return;
-    } else {
-      errorContainer.setAttribute("style", "opacity: 0");
-    }
-
-    this.title = titleDialog.value;
-    this.author = authorDialog.value;
-    this.npages = npagesDialog.value;
-    this.status = dialogBookStatus;
-    dialog.close();
-
-    dialogForm.reset();
-    renderBooks();
-  };
-};
 
 let searchBar = document.getElementById("searchbar");
 
