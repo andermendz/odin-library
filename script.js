@@ -19,6 +19,15 @@ class Book {
     console.log(this.length);
   }
 
+  // NON FUNCTIONAL EXAMPLE OF GETTERS AND SETTERS IMPLEMENTATION
+  get bookTitle(){
+    return this.title;
+  }
+
+  set bookTitle(title){
+    this.title = title;
+  }
+
   Remove() {
     books.forEach(() => {
       let i = 0;
