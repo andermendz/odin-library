@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
-
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
-:root{
-  font-size: 16px
+:root {
+  font-size: 16px;
 }
 * {
   font-family: "inter", "sans-serif";
@@ -18,11 +17,9 @@ body {
   grid-template-rows: 4rem 1fr;
   height: 100vh;
   margin: 0rem;
-  
 }
 
 #sidebar {
-
   font-size: 0.8rem;
   border: 0.125rem solid #e5e7eb;
   background-color: #fafbfb;
@@ -35,14 +32,14 @@ body {
 
 .logo {
   display: flex;
- 
+
   gap: 1rem;
   justify-content: center;
   align-items: center;
   grid-column: 1/2;
   grid-row: 1/2;
 
-  border: 0.125rem  solid #e5e7eb;
+  border: 0.125rem solid #e5e7eb;
 }
 #logo-svg {
   font-size: 3rem;
@@ -66,7 +63,7 @@ body {
 }
 
 .form-item > input {
-  border: 0.125rem  solid #d3d3d3;
+  border: 0.125rem solid #d3d3d3;
   border-radius: 0.4rem;
   height: 1.6rem;
 }
@@ -89,7 +86,7 @@ body {
 }
 
 button {
-  border: 0.125rem  solid #d3d3d3;
+  border: 0.125rem solid #d3d3d3;
   border-radius: 0.5rem;
   height: 3rem;
   font-weight: 500;
@@ -116,24 +113,24 @@ button {
 .search {
   display: flex;
   align-items: center;
-  
+
   background-color: #fafbfb;
   border: 0.125rem solid #e5e7eb;
   grid-column: 2/3;
   grid-row: 1/2;
 }
 
-.search > div{
+.search > div {
   display: flex;
   align-items: center;
   padding-left: 3rem;
 }
 
 .search > div > input {
-  border: 0.125rem  solid #e5e7eb;
+  border: 0.125rem solid #e5e7eb;
   border-radius: 0.6rem;
   height: 2rem;
-  width: 20rem ;
+  width: 20rem;
   padding-left: 3rem;
 }
 
@@ -143,8 +140,8 @@ button {
   padding: 2rem;
   gap: 1rem;
 
-  border: 0.125rem  solid #e5e7eb;
-  border: 0.125rem  solid #e5e7eb;
+  border: 0.125rem solid #e5e7eb;
+  border: 0.125rem solid #e5e7eb;
   grid-column: 2/3;
   grid-row: 2/3;
 }
@@ -249,7 +246,8 @@ button {
   grid-row: 7;
 }
 
-.book-edit, .book-delete {
+.book-edit,
+.book-delete {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,12 +256,10 @@ button {
 }
 
 .book-edit {
-
   background-color: #a3edff;
 }
 
 .book-delete {
-
   background-color: #ffa3a3;
 }
 
@@ -305,79 +301,76 @@ button {
     grid-row: 2/3;
   }
 
- 
   .logo {
     display: flex;
     grid-column: 1/2;
     grid-row: 1/2;
-  
+
     justify-content: center;
     align-items: center;
   }
 
-  #sidebar{
+  #sidebar {
     grid-column: 1/2;
     grid-row: 2/3;
-
   }
-  .search{
-   
-   display: flex;
-   justify-content: center;
+  .search {
+    display: flex;
+    justify-content: center;
     width: 100%;
     grid-column: 1/2;
     grid-row: 3/4;
   }
 
-  .search > div{
+  .search > div {
     padding: 0rem;
     width: 80%;
   }
 
-  .search > input{
+  .search > input {
     width: 60%;
   }
-  #content{
+  #content {
     grid-column: 1/2;
     grid-row: 4/5;
-    border: 0125rem
-}
-
-dialog {
-  width: 20rem;
-  border: 1p125remd #ccc;
-  border-radius: 1rem;
-  animation: fade-in;
-}
-
-#dialog-content {
-  display: flex;
-  flex-direction: column;
-}
-
-dialog::backdrop {
-  backdrop-filter: blur(0.125rem);
-
-  animation: fade-in-backdrop 1s ease-in;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: scale(1.1);
+    border: 0125rem;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-@keyframes fade-in-backdrop {
-  0% {
-    opacity: 0;
+  dialog {
+    width: 20rem;
+    border: 0.125rem solid #ccc;
+    border-radius: 1rem;
+    animation: fade-in;
   }
-  100% {
-    opacity: 1;
+
+  #dialog-content {
+    display: flex;
+    flex-direction: column;
   }
-}
+
+  dialog::backdrop {
+    backdrop-filter: blur(0.125rem);
+
+    animation: fade-in-backdrop 1s ease-in;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in-backdrop {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
