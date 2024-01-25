@@ -292,10 +292,10 @@ button {
 @media (max-width: 768px) {
   body {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 80px 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 6rem 1fr 4rem 1fr;
     height: 100vh;
-    margin: 0px;
+    margin: 0rem;
   }
 
   #sidebar {
@@ -310,7 +310,7 @@ button {
     display: flex;
     grid-column: 1/2;
     grid-row: 1/2;
-    flex-direction: column;
+  
     justify-content: center;
     align-items: center;
   }
@@ -321,19 +321,21 @@ button {
 
   }
   .search{
-    padding: 0px;
    
+   display: flex;
+   justify-content: center;
     width: 100%;
     grid-column: 1/2;
     grid-row: 3/4;
   }
 
   .search > div{
+    padding: 0rem;
     width: 80%;
   }
 
   .search > input{
-    width: 70%;
+    width: 60%;
   }
   #content{
     grid-column: 1/2;
@@ -342,7 +344,7 @@ button {
 }
 
 dialog {
-  width: 360px;
+  width: 20rem;
   border: 1p125remd #ccc;
   border-radius: 1rem;
   animation: fade-in;
@@ -354,7 +356,7 @@ dialog {
 }
 
 dialog::backdrop {
-  backdrop-filter: blur(1.2px);
+  backdrop-filter: blur(0.125rem);
 
   animation: fade-in-backdrop 1s ease-in;
 }
