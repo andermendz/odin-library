@@ -6,22 +6,28 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+:root{
+  font-size: 16px
+}
 * {
   font-family: "inter", "sans-serif";
 }
 body {
   display: grid;
-  grid-template-columns: minmax(200px, 320px) 1fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: 4rem 1fr;
   height: 100vh;
-  margin: 0px;
+  margin: 0rem;
+  
 }
 
 #sidebar {
-  border: 1px solid #e5e7eb;
+
+  font-size: 0.8rem;
+  border: 0.125rem solid #e5e7eb;
   background-color: #fafbfb;
   display: grid;
-  grid-template-rows: 180px 40px 360px;
+  grid-template-rows: 20rem 4rem 10rem;
 
   grid-column: 1/2;
   grid-row: 2/3;
@@ -29,20 +35,20 @@ body {
 
 .logo {
   display: flex;
-  padding-left: 30px;
-  gap: 20px;
-  justify-content: start;
+ 
+  gap: 1rem;
+  justify-content: center;
   align-items: center;
   grid-column: 1/2;
   grid-row: 1/2;
 
-  border: 1px solid #e5e7eb;
+  border: 0.125rem  solid #e5e7eb;
 }
 #logo-svg {
-  font-size: 36px;
+  font-size: 3rem;
 }
 .logo > div {
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -50,19 +56,19 @@ body {
   display: flex;
   flex-direction: column;
   grid-area: 3/1;
-  padding: 30px;
+  padding: 1rem;
 
-  gap: 12px;
+  gap: 0.8rem;
 }
 .form-item {
   display: grid;
-  gap: 6px;
+  gap: 0.4rem;
 }
 
 .form-item > input {
-  border: 1px solid #d3d3d3;
-  border-radius: 10px;
-  height: 30px;
+  border: 0.125rem  solid #d3d3d3;
+  border-radius: 0.4rem;
+  height: 1.6rem;
 }
 
 .form-item.status {
@@ -74,18 +80,18 @@ body {
   background-color: #f0f0f0;
   justify-content: space-around;
   align-items: center;
-  border-radius: 12px;
-  padding: 10px;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
 }
 
 .form-item.save {
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 button {
-  border: 1px solid #d3d3d3;
-  border-radius: 10px;
-  height: 40px;
+  border: 0.125rem  solid #d3d3d3;
+  border-radius: 0.5rem;
+  height: 3rem;
   font-weight: 500;
   transition: all 0.4s;
 }
@@ -99,12 +105,12 @@ button {
   transition: all 0.4s;
 
   margin-top: 2em;
-  margin: 20px;
-  padding: 10px;
-  padding-bottom: 50px;
+  margin: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 4rem;
 
   background-color: #fcc5c5;
-  border-radius: 12px;
+  border-radius: 0.8rem;
 }
 
 .search {
@@ -112,7 +118,7 @@ button {
   align-items: center;
   
   background-color: #fafbfb;
-  border: 1px solid #e5e7eb;
+  border: 0.125rem solid #e5e7eb;
   grid-column: 2/3;
   grid-row: 1/2;
 }
@@ -120,37 +126,38 @@ button {
 .search > div{
   display: flex;
   align-items: center;
-  padding-left: 40px;
+  padding-left: 3rem;
 }
 
 .search > div > input {
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  height: 32px;
-  width: 360px;
-  padding-left: 40px;
+  border: 0.125rem  solid #e5e7eb;
+  border-radius: 0.6rem;
+  height: 2rem;
+  width: 20rem ;
+  padding-left: 3rem;
 }
+
 #content {
   display: grid;
-  grid-template-rows: 40px 40px 1fr;
-  padding: 40px;
-  gap: 20px;
+  grid-template-rows: 3rem 1fr;
+  padding: 2rem;
+  gap: 1rem;
 
-  border: 1px solid #e5e7eb;
-  border: 1px solid #e5e7eb;
+  border: 0.125rem  solid #e5e7eb;
+  border: 0.125rem  solid #e5e7eb;
   grid-column: 2/3;
   grid-row: 2/3;
 }
 
 .content-title {
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 .bookscontainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 1rem;
   height: 80%;
 }
 
@@ -159,23 +166,23 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   background-color: #eeeeee;
-  height: 300px;
-  width: 200px;
+  height: 20rem;
+  width: 12rem;
   transition: all 0.2s ease-in-out;
 }
 
 .book-details {
-  padding: 20px;
+  padding: 1rem;
 
   grid-column: 1;
   grid-row: 1;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 40px 30px 30px 1fr 40px 50px 40px;
-  gap: 5px;
+  grid-template-rows: 2.2rem 2.2rem 2.2rem 1fr 2.4rem 3rem 2.4rem;
+  gap: 0.4rem;
   opacity: 1;
   transition: all 0.4s;
 }
@@ -188,7 +195,7 @@ button {
   justify-content: center;
   grid-column: 1/3;
   grid-row: 1/3;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -199,7 +206,7 @@ button {
   justify-content: end;
   grid-column: 1/3;
   grid-row: 3/3;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -207,11 +214,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 24px;
+  padding-left: 0.5rem;
+  padding-right: 1.4rem;
   grid-column: 1/4;
   grid-row: 5;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -219,38 +226,44 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   grid-column: 1/4;
   grid-row: 6;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 800;
 }
 
 .status-indicator {
-  font-size: 12px;
-  padding: 10px;
-  border-radius: 10px;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .book-actions {
   display: flex;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
   justify-content: space-between;
   grid-column: 1/4;
   grid-row: 7;
 }
 
+.book-edit, .book-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+}
+
 .book-edit {
-  padding: 10px;
-  border-radius: 10px;
+
   background-color: #a3edff;
 }
 
 .book-delete {
-  padding: 10px;
-  border-radius: 10px;
+
   background-color: #ffa3a3;
 }
 
@@ -273,7 +286,7 @@ button {
 .book:hover > .book-details {
   opacity: 1;
 
-  padding: 18px;
+  padding: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -325,14 +338,13 @@ button {
   #content{
     grid-column: 1/2;
     grid-row: 4/5;
-    border: 0px;
-  }
+    border: 0125rem
 }
 
 dialog {
   width: 360px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+  border: 1p125remd #ccc;
+  border-radius: 1rem;
   animation: fade-in;
 }
 
@@ -365,4 +377,5 @@ dialog::backdrop {
   100% {
     opacity: 1;
   }
+}
 }
