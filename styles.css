@@ -285,6 +285,13 @@ button {
   padding: 1rem;
 }
 
+dialog {
+  width: 20rem;
+  border: 0.125rem solid #ccc;
+  border-radius: 1rem;
+  animation: fade-in;
+}
+
 @media (max-width: 768px) {
   body {
     display: grid;
@@ -336,12 +343,7 @@ button {
     border: 0125rem;
   }
 
-  dialog {
-    width: 20rem;
-    border: 0.125rem solid #ccc;
-    border-radius: 1rem;
-    animation: fade-in;
-  }
+
 
   #dialog-content {
     display: flex;
